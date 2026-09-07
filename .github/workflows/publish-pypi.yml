@@ -124,7 +124,7 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_TAG }}
           persist-credentials: false
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
         with:
           python-version: "3.12"
       # RUSTUP_TOOLCHAIN is not optional. rust-toolchain.toml asks for
@@ -196,7 +196,7 @@ jobs:
       # wheel was built against, so this proves the abi3 wheel installs
       # without a source build on a later CPython. --only-binary :all:
       # makes pip fail rather than quietly fall back to building.
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
         if: matrix.platform.target == ''
         with:
           python-version: "3.13"
@@ -227,7 +227,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@efa25f7f19611383d5b0ccf2d1c8914531636bf9  # master
         with:
           toolchain: stable
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
         with:
           python-version: "3.12"
       - name: Build sdist
@@ -261,7 +261,7 @@ jobs:
       # with no third-party action: GitHub mints an OIDC identity proof,
       # PyPI verifies it against the registered publisher and returns a
       # minutes-lived upload token, twine uploads with it.
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
         with:
           python-version: "3.12"
       - name: Upload via Trusted Publishing (OIDC, no stored secret)
